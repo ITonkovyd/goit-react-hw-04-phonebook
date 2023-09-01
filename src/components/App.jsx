@@ -5,7 +5,9 @@ import ContactsForm from './ContactsForm';
 import Filter from './Filter';
 
 export function App() {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(
+    () => JSON.parse(localStorage.getItem('contacts')) ?? []
+  );
   const [filter, setFilter] = useState('');
 
   function handleAdd(newContact) {

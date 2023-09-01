@@ -91,6 +91,12 @@ export default function ContactsForm({ contacts, onFormChange }) {
 }
 
 ContactsForm.propTypes = {
-  contacts: PropTypes.array.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ).isRequired,
   onFormChange: PropTypes.func.isRequired,
 };
