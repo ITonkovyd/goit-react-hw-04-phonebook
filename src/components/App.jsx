@@ -31,9 +31,7 @@ export function App() {
   useEffect(() => {
     const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
     if (parsedContacts) {
-      return () => {
-        setContacts(parsedContacts);
-      };
+      setContacts(parsedContacts);
     }
   }, []);
 
